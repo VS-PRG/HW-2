@@ -19,11 +19,11 @@ const Counter = () => {
   };
   const handleIncrment = (productId) => {
     console.log(productId);
-    if (productId.id === 1) {
-      setCount(count + 1);
-    } else {
-      setCount(count - 1);
-    }
+    setCount(count + 1);
+  };
+  const handleDecrement = (productId) => {
+    console.log(productId);
+    setCount(count - 1);
   };
 
   return (
@@ -38,8 +38,9 @@ const Counter = () => {
         Increment
       </button>
       <button
-        onClick={() => handleIncrment({ id: 2 })}
-        className="btn btn-secondary btn-sm"
+        onClick={() => handleDecrement({ id: 2 })}
+        className = "btn btn-secondary btn-sm"
+        disabled = {count <= 0}
       >
         Decrement
       </button>
